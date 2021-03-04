@@ -51,6 +51,7 @@ class TicTacToe
     end
 
     def turn
+        # display_board
         puts "Please choose a position between 1 - 9."
         input = gets
         index = input_to_index(input)
