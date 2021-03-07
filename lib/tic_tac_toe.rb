@@ -38,7 +38,7 @@ class TicTacToe
     
     def valid_move?(index)
         return false if position_taken?(index) == true
-        return false if index >= 9 || index < 0
+        return false if index > 8 || index < 0
         return true
     end
 
@@ -51,7 +51,6 @@ class TicTacToe
     end
 
     def turn
-        # display_board
         puts "Please choose a position between 1 - 9."
         input = gets
         index = input_to_index(input)
@@ -66,8 +65,8 @@ class TicTacToe
 
     def won?
         WIN_COMBINATIONS.find do |combination| 
-             combination.all? {|position| @board[position] == "X"} ||
-                 combination.all? {|position| @board[position] == "O"}  
+             combination.all? {|position| @board[position] == "X" } || 
+             combination.all? {|position| @board[position] == "O"}
                 
          end
      end
